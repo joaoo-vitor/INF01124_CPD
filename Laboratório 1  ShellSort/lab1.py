@@ -12,10 +12,11 @@ def shell_sort(arr, seq_type):
         seq = knuth_sequence
     elif(seq_type == 'CIURA'):
         seq = ciura_sequence
+
+    # escolhe qual elemento da sequencia comaçar, partindo do ultimo e indo para a esquerda
     index_sequence = len(seq)-1
     while(seq[index_sequence] > len(arr)):
         index_sequence -= 1
-    print('index encontrado: ', index_sequence)
 
     print(*arr, f'SEQ={seq_type}') 
     for i in range(index_sequence, -1, -1):
@@ -27,22 +28,28 @@ def shell_sort(arr, seq_type):
 
 def insDiretaShellSort(arr, h, f):
     n = len(arr)
+    # começa do segundo elemento do segmento até o ultimo
     for j in range(h+f, n, h):
         chave = arr[j]
         i = j-h 
+        # insere a nova chave no lugar correto
         while((i>=0) and (arr[i]>chave)):
             arr[i+h] = arr[i]
             i = i-h
         arr[i+h] = chave
 
 
-array = np.random.randint(0, 100000, size=10)
-shell_sort(array, 'SHELL')
+# array = np.random.randint(0, 100000, size=10)
+# shell_sort(array, 'SHELL')
 
 
 
 
-# with open('entrada1.txt', 'r') as f:
-#     for line in f:
-#         arr = line.split()
-#         shell_sort(arr, )
+with open('Laboratório 1  ShellSort/entrada1.txt', 'r') as f:
+    for line in f:
+        arr = line.split()
+        arr = list(map(lambda x: int(x), arr))
+        for sequence in ['SHELL', 'KNUTH', 'CIURA']:
+            shell_sort(arr, sequence)
+  
+
