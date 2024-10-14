@@ -4,7 +4,7 @@ shell_sequence = [1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 1024, 2048, 4096, 8192,
 knuth_sequence = [1, 4, 13, 40, 121, 364, 1093, 3280, 9841, 29524, 88573, 265720, 797161, 2391484]
 ciura_sequence = [1, 4, 10, 23, 57, 132, 301, 701, 1577, 3548, 7983, 17961, 40412, 90927, 204585, 460316, 1035711]
 
-def shell_sort(arr, n, seq_type):
+def shell_sort(arr, n, seq_type, should_print):
     # descresce começando no index np até 0 na sequencia dada
     if(seq_type == 'SHELL'):
         seq = shell_sequence
@@ -18,12 +18,14 @@ def shell_sort(arr, n, seq_type):
     while(seq[index_sequence] > n):
         index_sequence -= 1
 
-    print(*arr, f'SEQ={seq_type}') 
+    if(should_print): 
+        print(*arr, f'SEQ={seq_type}') 
     for i in range(index_sequence, -1, -1):
         h = seq[i]
         for j in range(0, h):
             insDiretaShellSort(arr, n, h, j)
-        print(*arr, f'INCR={h}') 
+        if(should_print): 
+            print(*arr, f'INCR={h}') 
 
 
 def insDiretaShellSort(arr, n, h, f):
