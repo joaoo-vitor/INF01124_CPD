@@ -20,28 +20,30 @@ with open('entrada-quicksort.txt', 'r') as e:
                 pivot = np.random.randint(0, len(arr) - 1)
             elif particionador == 'mediana3':
                 inicio = arr[0]
-                fim = len(arr) - 1
-                pivot = (inicio + fim) // 2
+                fim = arr[len(arr)-1]
+                meio = arr[(len(arr)-1)//2]
+                pivot = (inicio + fim) // 3
+            
+            # Altera o pivot como o primeiro elemento 
+            swap(arr, 0, pivot)
 
             # Ordena array com QuickSort Lomuto
             arr_copy = arr.copy()  
             time_before = datetime.datetime.now()
-            trocas, recursoes = quick_sort_lomuto(arr_copy, pivot, len(arr_copy) - 1)
+            trocas, recursoes = quick_sort_lomuto(arr_copy, 0, len(arr_copy) - 1)
             time_after = datetime.datetime.now()
             milisseconds = (time_after-time_before).microseconds/1000
             result_line = f'{n}, {particionador}, "lomuto", {trocas}, {recursoes}, {milisseconds:.3f}'   
             results.append(result_line)
-            print(result_line)
 
             # Ordena array com QuickSort Hoare
             arr_copy = arr.copy() 
             time_before = datetime.datetime.now()
-            trocas, recursoes = quick_sort_hoare(arr_copy, pivot, len(arr_copy) - 1)
+            trocas, recursoes = quick_sort_hoare(arr_copy, 0, len(arr_copy) - 1)
             time_after = datetime.datetime.now()
             milisseconds = (time_after-time_before).microseconds/1000
             result_line = f'{n}, {particionador} ,"hoare", {trocas}, {recursoes}, {milisseconds:.3f}'
             results.append(result_line)
-            print(result_line)
 
 # Salva no arquivo de saida 
 with open('saida-quicksort.txt', 'w') as s:
