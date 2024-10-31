@@ -1,20 +1,20 @@
-100, aleatorio, "lomuto", 65, 31, 0.000
-100, aleatorio ,"hoare", 27, 31, 0.000
-100, mediana3, "lomuto", 68, 37, 0.000
-100, mediana3 ,"hoare", 38, 41, 0.000
-1000, aleatorio, "lomuto", 3338, 911, 0.000
-1000, aleatorio ,"hoare", 1472, 923, 0.000
-1000, mediana3, "lomuto", 1619, 471, 0.000
-1000, mediana3 ,"hoare", 720, 473, 0.000
-10000, aleatorio, "lomuto", 12430, 2415, 4.993
-10000, aleatorio ,"hoare", 4570, 2441, 5.005
-10000, mediana3, "lomuto", 32364, 5999, 13.000
-10000, mediana3 ,"hoare", 12682, 5985, 9.995
-100000, aleatorio, "lomuto", 444503, 60305, 162.413
-100000, aleatorio ,"hoare", 163456, 61209, 131.062
-100000, mediana3, "lomuto", 185332, 27237, 75.331
-100000, mediana3 ,"hoare", 69383, 27469, 56.242
-1000000, aleatorio, "lomuto", 6172611, 699609, 881.284
-1000000, aleatorio ,"hoare", 2317689, 711773, 226.479
-1000000, mediana3, "lomuto", 3672087, 398939, 344.112
-1000000, mediana3 ,"hoare", 1269407, 403731, 231.274
+100,aleatorio,lomuto,112,51,0.000
+100,aleatorio,hoare,44,51,0.000
+100,mediana3,lomuto,68,37,0.000
+100,mediana3,hoare,38,41,0.000
+1000,aleatorio,lomuto,784,201,0.000
+1000,aleatorio,hoare,296,205,0.000
+1000,mediana3,lomuto,1619,471,0.998
+1000,mediana3,hoare,720,473,0.000
+10000,aleatorio,lomuto,15569,3011,4.006
+10000,aleatorio,hoare,6011,3079,2.999
+10000,mediana3,lomuto,32364,5999,8.508
+10000,mediana3,hoare,12682,5985,6.003
+100000,aleatorio,lomuto,927020,103167,209.257
+100000,aleatorio,hoare,288974,105661,149.448
+100000,mediana3,lomuto,185332,27237,42.002
+100000,mediana3,hoare,69383,27469,33.242
+1000000,aleatorio,lomuto,67332,11753,16.418
+1000000,aleatorio,hoare,27163,11711,13.995
+1000000,mediana3,lomuto,3672087,398939,899.553
+1000000,mediana3,hoare,1269407,403731,667.993
