@@ -11,14 +11,15 @@ df_searches = pd.read_csv('arquivos-suporte/consultas.csv')
 
 # Para cada tamanho de tabela
 for table_size in table_sizes:
-    # Cria tabela inserindo cada jogador na lista da posição adequada 
+    # Cria tabela vazia
     hash_table = start_hash_table(table_size)
 
     # Conta tempo
     start = datetime.datetime.now()
+    # Insere cada jogador na lista da posição adequada 
     for index, row in df_players.iterrows():
         key = int(row['sofifa_id'])
-        insert_hash_table(key, row, hash_table, table_size)
+        insert_hash_table(key, row.to_dict(), hash_table, table_size)
     end = datetime.datetime.now()
     table_creation_time = (end-start).microseconds/1000
 
@@ -40,9 +41,15 @@ for table_size in table_sizes:
     # Faz consultas para cada valor do csv de consultas
     # Registra estatísticas
     start = datetime.datetime.now()
+    # Dicionario que hospeda se encontrou o jogador e quantos testes foram feitos
+    dict_found_tests = []
     for index, row in df_searches.iterrows():
         key = row[0]
         tests_qty, player = search_hash_table(key, 'sofifa_id', hash_table, table_size)
-        if(!player)
+        if(player):
+            dict_found_tests.append({'id':key, 'name':player['name'], 'tests_qty':tests_qty})
+        else:
+            dict_found_tests.append({'id':99999, 'name':'NAO_ENCONTRADO', 'tests_qty':tests_qty})
+
     end = datetime.datetime.now()
     searches_time = (end-start).microseconds/1000
